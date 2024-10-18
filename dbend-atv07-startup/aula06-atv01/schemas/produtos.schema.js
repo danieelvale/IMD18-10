@@ -8,8 +8,8 @@ module.exports = {
       type: "array",
       items: { type: "string" }
     },
+    imagem: { type: "string" }, 
   },
   required: ["nome", "preco"],
   additionalProperties: false
 };
-

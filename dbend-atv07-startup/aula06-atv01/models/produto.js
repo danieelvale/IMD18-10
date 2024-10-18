@@ -1,3 +1,4 @@
+
 'use strict';
 const { Model } = require('sequelize');
 
@@ -12,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     nome: DataTypes.STRING,
     descricao: DataTypes.STRING,
     preco: DataTypes.REAL,
+    imagem: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Produto',
@@ -19,3 +21,4 @@ module.exports = (sequelize, DataTypes) => {
 
   return Produto;
 };
+
