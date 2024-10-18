@@ -1,20 +1,19 @@
-// middleware/upload.js
+
 const multer = require('multer');
 const path = require('path');
 
-// Configurações do storage
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'public/uploads'); // Pasta onde os arquivos serão salvos
+    cb(null, 'public/uploads'); 
   },
   filename: (req, file, cb) => {
-    cb(null, `${Date.now()}-${file.originalname}`); // Renomeia o arquivo
+    cb(null, `${Date.now()}-${file.originalname}`); 
   }
 });
 
-// Filtra apenas arquivos de imagem
 const fileFilter = (req, file, cb) => {
-  const filetypes = /jpeg|jpg|png|gif/; // Tipos de arquivo permitidos
+  const filetypes = /jpeg|jpg|png|gif/; 
   const mimetype = filetypes.test(file.mimetype);
   const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
 
